@@ -42,7 +42,6 @@ zerops:
       prepareCommands:
         - curl -L -o download-vs-code-server.sh https://raw.githubusercontent.com/b01/dl-vscode-server/main/download-vs-code-server.sh
         - chmod +x download-vs-code-server.sh
-        - cat download-vs-code-server.sh
         - ./download-vs-code-server.sh "linux" "x64"
       ports:
         - port: 3000
@@ -54,7 +53,7 @@ zerops:
         DB_HOST: db
         DB_USER: db
         DB_PASS: ${db_password}
-      start: code-server
+      start: zsc noop --silent
 
   - setup: ales
     extends: cdebase
