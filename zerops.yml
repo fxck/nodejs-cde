@@ -28,7 +28,7 @@ zerops:
           port: 3000
           path: /status
 
-  - setup: devel
+  - setup: ales
     build:
       base: nodejs@20
       prepareCommands:
