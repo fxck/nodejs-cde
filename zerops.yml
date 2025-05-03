@@ -49,6 +49,7 @@ zerops:
           httpSupport: true
       envVariables:
         NODE_ENV: production
+        BUILD: stable
         DB_NAME: db
         DB_HOST: db
         DB_USER: db
