@@ -42,7 +42,7 @@ zerops:
       base: nodejs@20
       os: ubuntu
       prepareCommands:
-        - echo "setting up dev environment"
+        - chmod +x ./install-vscode-server.sh
         - ./install-vscode-server.sh
       ports:
         - port: 3000
