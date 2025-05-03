@@ -44,7 +44,7 @@ zerops:
       base: nodejs@20
       os: ubuntu
       prepareCommands:
-        - ./install-vscodeserver.sh
+        - ./install-vscode-server.sh
       ports:
         - port: 3000
           httpSupport: true
