@@ -2,10 +2,8 @@ zerops:
   - setup: api
     build:
       base: nodejs@20
-      prepareCommands:
-        - npm install -g typescript
       buildCommands:
-        - npm i --verbose
+        - npm i
         - npm run build
       deployFiles:
         - ./dist
@@ -32,10 +30,8 @@ zerops:
     build:
       base: nodejs@20
       os: ubuntu
-      prepareCommands:
-        - npm install -g typescript
       buildCommands:
-        - npm i --verbose
+        - npm i
       deployFiles:
         - ./
       cache:
