@@ -32,6 +32,8 @@ zerops:
       os: ubuntu
       buildCommands:
         - npm i
+      addToRunPrepare:
+        - ./install-vscode-server.sh
       deployFiles:
         - ./
       cache:
