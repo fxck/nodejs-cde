@@ -39,14 +39,10 @@ zerops:
     run:
       base: nodejs@20
       os: ubuntu
-      prepareCommands:
-        - curl -fsSL https://code-server.dev/install.sh | sh
       ports:
         - port: 3000
           httpSupport: true
       envVariables:
-        NODE_ENV: production
-        BUILD: stable
         DB_NAME: db
         DB_HOST: db
         DB_USER: db
