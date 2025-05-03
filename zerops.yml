@@ -26,7 +26,7 @@ zerops:
           port: 3000
           path: /status
 
-  - setup: ales
+  - setup: cdebase
     build:
       base: nodejs@20
       os: ubuntu
@@ -40,6 +40,7 @@ zerops:
       base: nodejs@20
       os: ubuntu
       prepareCommands:
+        - echo "setting up dev environment"
         - ./install-vscode-server.sh
       ports:
         - port: 3000
@@ -50,4 +51,7 @@ zerops:
         DB_HOST: db
         DB_USER: db
         DB_PASS: ${db_password}
-      start: zsc noop --silent
+      start: code-server
+
+  - setup: ales
+    extends: cdebase

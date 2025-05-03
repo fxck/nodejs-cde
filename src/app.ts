@@ -16,7 +16,7 @@ app.get('/', async (_, res) => {
   res.status(201).send({
     message: `This is a simple, basic Node.js / Express.js application running on Zerops.io,
       each request adds an entry to the PostgreSQL database and returns a count.
-      See the source repository (https://github.com/zeropsio/recipe-nodejs) for more information.`,
+      See the source repository (https://github.com/zeropsio/recipe-nodejs) for more information....`,
     newEntry: data,
     count: count
   });
