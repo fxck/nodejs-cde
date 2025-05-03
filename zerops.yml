@@ -31,12 +31,15 @@ zerops:
   - setup: ales
     build:
       base: nodejs@20
+      os: ubuntu
       prepareCommands:
         - npm install -g typescript
       buildCommands:
         - npm i --verbose
       deployFiles:
         - ./
+      cache:
+        - node_modules
     run:
       base: nodejs@20
       os: ubuntu
