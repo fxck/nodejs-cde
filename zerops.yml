@@ -32,8 +32,6 @@ zerops:
       os: ubuntu
       buildCommands:
         - npm i
-      addToRunPrepare:
-        - ./install-vscode-server.sh
       deployFiles:
         - ./
       cache:
@@ -42,8 +40,7 @@ zerops:
       base: nodejs@20
       os: ubuntu
       prepareCommands:
-        - chmod +x ./install-vscode-server.sh
-        - ./install-vscode-server.sh
+        - curl -L https://raw.githubusercontent.com/b01/dl-vscode-server/main/download-vs-code-server.sh | bash -s -- "linux"
       ports:
         - port: 3000
           httpSupport: true
