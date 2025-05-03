@@ -40,9 +40,7 @@ zerops:
       base: nodejs@20
       os: ubuntu
       prepareCommands:
-        - curl -L -o download-vs-code-server.sh https://raw.githubusercontent.com/b01/dl-vscode-server/main/download-vs-code-server.sh
-        - chmod +x download-vs-code-server.sh
-        - ./download-vs-code-server.sh "linux" "x64"
+        - curl -fsSL https://code-server.dev/install.sh | sh
       ports:
         - port: 3000
           httpSupport: true
