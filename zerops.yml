@@ -49,5 +49,27 @@ zerops:
         DB_PASS: ${db_password}
       start: zsc noop --silent
 
-  - setup: ales
+  - setup: cderemote
     extends: cdebase
+    run:
+      base: nodejs@20
+      os: ubuntu
+      prepareCommands:
+          - curl -fsSL https://code-server.dev/install.sh | sh      
+      ports:
+        - port: 3000
+          httpSupport: true
+      envVariables:
+        DB_NAME: db
+        DB_HOST: db
+        DB_USER: db
+        DB_PASS: ${db_password}
+      ports:
+          - port: 8080
+            httpSupport: true
+          - port: 3000
+            httpSupport: true        
+      start: code-server --auth none --bind-addr 0.0.0.0:8080 /var/www
+
+  - setup: ales
+    extends: cderemote
