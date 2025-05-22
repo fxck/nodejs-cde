@@ -61,6 +61,8 @@ zerops:
         DB_HOST: db
         DB_USER: db
         DB_PASS: ${db_password}
+      initCommands:
+        - zcli login $ZEROPS_ACCESS_TOKEN
       ports:
           - port: 3000
             httpSupport: true        
