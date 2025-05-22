@@ -62,8 +62,6 @@ zerops:
         DB_USER: db
         DB_PASS: ${db_password}
       ports:
-          - port: 8080
-            httpSupport: true
           - port: 3000
             httpSupport: true        
       start: code-server --auth none --bind-addr 0.0.0.0:8080 /var/www
