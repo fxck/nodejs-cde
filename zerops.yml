@@ -1,7 +1,7 @@
 zerops:
-  - setup: api
+  - setup: app
     build:
-      base: nodejs@20
+      base: nodejs@22
       buildCommands:
         - npm i
         - npm run build
@@ -10,7 +10,7 @@ zerops:
         - ./node_modules
         - ./package.json
     run:
-      base: nodejs@20
+      base: nodejs@22
       ports:
         - port: 3000
           httpSupport: true
@@ -28,7 +28,7 @@ zerops:
 
   - setup: cdebase
     build:
-      base: nodejs@20
+      base: nodejs@22
       os: ubuntu
       buildCommands:
         - npm i
@@ -49,10 +49,10 @@ zerops:
         DB_PASS: ${db_password}
       start: zsc noop --silent
 
-  - setup: cderemote
+  - setup: cderemotebase
     extends: cdebase
     run:
-      base: nodejs@20
+      base: nodejs@22
       os: ubuntu
       prepareCommands:
           - curl -fsSL https://code-server.dev/install.sh | sh      
@@ -68,5 +68,5 @@ zerops:
             httpSupport: true        
       start: code-server --auth none --bind-addr 0.0.0.0:8080 /var/www
 
-  - setup: ales
-    extends: cderemote
+  - setup: dev1
+    extends: cderemotebase
