@@ -55,12 +55,17 @@ zerops:
       base: nodejs@22
       os: ubuntu
       prepareCommands:
-          - curl -fsSL https://code-server.dev/install.sh | sh      
+          - curl -fsSL https://code-server.dev/install.sh | sh -s -- --dry-run; curl -fsSL https://code-server.dev/install.sh | sh
+          - sudo apt-get update -y
+          - sudo apt-get install -y chromium-browser
+          - sudo apt-get clean -y
+          - sudo rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
       envVariables:
         DB_NAME: db
         DB_HOST: db
         DB_USER: db
         DB_PASS: ${db_password}
+        PUPPETEER_EXECUTABLE_PATH: /usr/bin/chromium-browser
       initCommands:
         - zcli login $ZEROPS_ACCESS_TOKEN
       ports:
