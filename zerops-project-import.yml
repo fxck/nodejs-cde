@@ -5,7 +5,12 @@ project:
 
 services:
   - hostname: api
-    type: nodejs@20
+    type: nodejs@22
+    enableSubdomainAccess: true
+    buildFromGit: https://github.com/zeropsio/recipe-nodejs
+
+  - hostname: ales
+    type: nodejs@22
     enableSubdomainAccess: true
     buildFromGit: https://github.com/zeropsio/recipe-nodejs
 
