@@ -55,7 +55,7 @@ zerops:
       base: nodejs@22
       os: ubuntu
       prepareCommands:
-          - curl -fsSL https://code-server.dev/install.sh | sh -s -- -y
+          - curl -fsSL https://code-server.dev/install.sh | sh
       envVariables:
         DB_NAME: db
         DB_HOST: db
