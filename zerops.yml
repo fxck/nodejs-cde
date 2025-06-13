@@ -66,5 +66,5 @@ zerops:
             httpSupport: true        
       start: code-server --auth none --bind-addr 0.0.0.0:8080 /var/www
 
-  - setup: dev1
+  - setup: ales
     extends: cderemotebase
