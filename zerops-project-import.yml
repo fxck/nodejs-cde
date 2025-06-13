@@ -4,7 +4,7 @@ project:
     - zerops-recipe
 
 services:
-  - hostname: api
+  - hostname: app
     type: nodejs@22
     enableSubdomainAccess: true
     buildFromGit: https://github.com/fxck/nodejs-cde
