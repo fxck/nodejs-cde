@@ -7,12 +7,12 @@ services:
   - hostname: api
     type: nodejs@22
     enableSubdomainAccess: true
-    buildFromGit: https://github.com/zeropsio/recipe-nodejs
+    buildFromGit: https://github.com/fxck/nodejs-cde
 
   - hostname: ales
     type: nodejs@22
     enableSubdomainAccess: true
-    buildFromGit: https://github.com/zeropsio/recipe-nodejs
+    buildFromGit: https://github.com/fxck/nodejs-cde
 
   - hostname: db
     type: postgresql@16
